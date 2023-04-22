@@ -80,7 +80,7 @@ class AokvqaDataset_vqax(ClipCocoDataset):
         answer_list = []
         qqq = []
         # for i in range(len(aokvqa_set)):
-        for i in range(10):
+        for i in range(the_number_of_vqa):
             answer_list.append(aokvqa_set[i]['answers'][0])
             d = aokvqa_set[i]
             if ' '.join(d['question'].split()[:4]) not in qqq:
