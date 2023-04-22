@@ -1,0 +1,153 @@
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+| distributed init (rank 3): env://
+| distributed init (rank 6): env://
+| distributed init (rank 2): env://
+| distributed init (rank 0): env://
+| distributed init (rank 1): env://
+| distributed init (rank 4): env://
+| distributed init (rank 5): env://
+| distributed init (rank 7): env://
+Loading model from ../pretrain_model/coco_weights.pt
+>>> epoch 1: train set (train)
+[W reducer.cpp:1050] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters. This flag results in an extra traversal of the autograd graph every iteration, which can adversely affect performance. If your model indeed never has any unused parameters, consider turning this flag off. Note that this warning may be a false positive your model has flow control causing later iterations to have unused parameters. (function operator())
+[W reducer.cpp:1050] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters. This flag results in an extra traversal of the autograd graph every iteration, which can adversely affect performance. If your model indeed never has any unused parameters, consider turning this flag off. Note that this warning may be a false positive your model has flow control causing later iterations to have unused parameters. (function operator())
+[W reducer.cpp:1050] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters. This flag results in an extra traversal of the autograd graph every iteration, which can adversely affect performance. If your model indeed never has any unused parameters, consider turning this flag off. Note that this warning may be a false positive your model has flow control causing later iterations to have unused parameters. (function operator())
+[W reducer.cpp:1050] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters. This flag results in an extra traversal of the autograd graph every iteration, which can adversely affect performance. If your model indeed never has any unused parameters, consider turning this flag off. Note that this warning may be a false positive your model has flow control causing later iterations to have unused parameters. (function operator())
+[W reducer.cpp:1050] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters. This flag results in an extra traversal of the autograd graph every iteration, which can adversely affect performance. If your model indeed never has any unused parameters, consider turning this flag off. Note that this warning may be a false positive your model has flow control causing later iterations to have unused parameters. (function operator())
+[W reducer.cpp:1050] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters. This flag results in an extra traversal of the autograd graph every iteration, which can adversely affect performance. If your model indeed never has any unused parameters, consider turning this flag off. Note that this warning may be a false positive your model has flow control causing later iterations to have unused parameters. (function operator())
+[W reducer.cpp:1050] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters. This flag results in an extra traversal of the autograd graph every iteration, which can adversely affect performance. If your model indeed never has any unused parameters, consider turning this flag off. Note that this warning may be a false positive your model has flow control causing later iterations to have unused parameters. (function operator())
+[W reducer.cpp:1050] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters. This flag results in an extra traversal of the autograd graph every iteration, which can adversely affect performance. If your model indeed never has any unused parameters, consider turning this flag off. Note that this warning may be a false positive your model has flow control causing later iterations to have unused parameters. (function operator())
+Epoch: [1]  [   0/1066]  eta: 2:56:57    time: 9.9602  data: 0.8142  max mem: 5998
+Epoch: [1]  [ 100/1066]  eta: 0:36:49    time: 2.1496  data: 0.0116  max mem: 7908
+Epoch: [1]  [ 200/1066]  eta: 0:30:28    time: 1.9295  data: 0.0104  max mem: 7908
+Epoch: [1]  [ 300/1066]  eta: 0:25:51    time: 1.8534  data: 0.0094  max mem: 7908
+Epoch: [1]  [ 400/1066]  eta: 0:22:00    time: 1.5694  data: 0.0098  max mem: 7908
+Epoch: [1]  [ 500/1066]  eta: 0:18:23    time: 1.8738  data: 0.0092  max mem: 7908
+Epoch: [1]  [ 600/1066]  eta: 0:14:55    time: 1.9072  data: 0.0090  max mem: 7908
+Epoch: [1]  [ 700/1066]  eta: 0:11:35    time: 1.7949  data: 0.0089  max mem: 7908
+Epoch: [1]  [ 800/1066]  eta: 0:08:20    time: 1.7501  data: 0.0093  max mem: 7908
+Epoch: [1]  [ 900/1066]  eta: 0:05:09    time: 1.7674  data: 0.0096  max mem: 7908
+Epoch: [1]  [1000/1066]  eta: 0:02:02    time: 1.7088  data: 0.0093  max mem: 7908
+Epoch: [1]  [1065/1066]  eta: 0:00:01    time: 1.7520  data: 0.0101  max mem: 7908
+Traceback (most recent call last):
+  File "train/clipcap_train.py", line 541, in <module>
+    main()
+  File "train/clipcap_train.py", line 96, in main
+    run(dataset, val_dataset, model, cfg, tb_writer=None,model_ddp=model_without_ddp)
+  File "train/clipcap_train.py", line 164, in run
+    train=False, tb_writer=tb_writer)
+  File "train/clipcap_train.py", line 229, in loop
+    answer_list = load_aokvqa('AOKVQA/aokvqa', 'val')
+  File "../utils/load_data.py", line 8, in load_aokvqa
+    os.path.join(aokvqa_dir, f"aokvqa_{version}_{split}.json")
+FileNotFoundError: [Errno 2] No such file or directory: 'AOKVQA/aokvqa/aokvqa_v1p0_val.json'
+Traceback (most recent call last):
+  File "train/clipcap_train.py", line 541, in <module>
+    main()
+  File "train/clipcap_train.py", line 96, in main
+    run(dataset, val_dataset, model, cfg, tb_writer=None,model_ddp=model_without_ddp)
+  File "train/clipcap_train.py", line 164, in run
+    train=False, tb_writer=tb_writer)
+  File "train/clipcap_train.py", line 229, in loop
+    answer_list = load_aokvqa('AOKVQA/aokvqa', 'val')
+  File "../utils/load_data.py", line 8, in load_aokvqa
+    os.path.join(aokvqa_dir, f"aokvqa_{version}_{split}.json")
+FileNotFoundError: [Errno 2] No such file or directory: 'AOKVQA/aokvqa/aokvqa_v1p0_val.json'
+Traceback (most recent call last):
+  File "train/clipcap_train.py", line 541, in <module>
+Traceback (most recent call last):
+  File "train/clipcap_train.py", line 541, in <module>
+Epoch: [1] Total time: 0:32:53 (1.8510 s / it)
+Traceback (most recent call last):
+  File "train/clipcap_train.py", line 541, in <module>
+    main()
+  File "train/clipcap_train.py", line 96, in main
+    run(dataset, val_dataset, model, cfg, tb_writer=None,model_ddp=model_without_ddp)
+  File "train/clipcap_train.py", line 164, in run
+    train=False, tb_writer=tb_writer)
+  File "train/clipcap_train.py", line 229, in loop
+    answer_list = load_aokvqa('AOKVQA/aokvqa', 'val')
+  File "../utils/load_data.py", line 8, in load_aokvqa
+    os.path.join(aokvqa_dir, f"aokvqa_{version}_{split}.json")
+FileNotFoundError: [Errno 2] No such file or directory: 'AOKVQA/aokvqa/aokvqa_v1p0_val.json'
+    main()
+  File "train/clipcap_train.py", line 96, in main
+    run(dataset, val_dataset, model, cfg, tb_writer=None,model_ddp=model_without_ddp)
+  File "train/clipcap_train.py", line 164, in run
+    train=False, tb_writer=tb_writer)
+  File "train/clipcap_train.py", line 229, in loop
+    answer_list = load_aokvqa('AOKVQA/aokvqa', 'val')
+  File "../utils/load_data.py", line 8, in load_aokvqa
+    os.path.join(aokvqa_dir, f"aokvqa_{version}_{split}.json")
+FileNotFoundError: [Errno 2] No such file or directory: 'AOKVQA/aokvqa/aokvqa_v1p0_val.json'
+    main()
+  File "train/clipcap_train.py", line 96, in main
+    run(dataset, val_dataset, model, cfg, tb_writer=None,model_ddp=model_without_ddp)
+  File "train/clipcap_train.py", line 164, in run
+    train=False, tb_writer=tb_writer)
+  File "train/clipcap_train.py", line 229, in loop
+    answer_list = load_aokvqa('AOKVQA/aokvqa', 'val')
+  File "../utils/load_data.py", line 8, in load_aokvqa
+    os.path.join(aokvqa_dir, f"aokvqa_{version}_{split}.json")
+FileNotFoundError: [Errno 2] No such file or directory: 'AOKVQA/aokvqa/aokvqa_v1p0_val.json'
+Traceback (most recent call last):
+  File "train/clipcap_train.py", line 541, in <module>
+Traceback (most recent call last):
+  File "train/clipcap_train.py", line 541, in <module>
+    main()
+  File "train/clipcap_train.py", line 96, in main
+    run(dataset, val_dataset, model, cfg, tb_writer=None,model_ddp=model_without_ddp)
+  File "train/clipcap_train.py", line 164, in run
+    train=False, tb_writer=tb_writer)
+  File "train/clipcap_train.py", line 229, in loop
+    answer_list = load_aokvqa('AOKVQA/aokvqa', 'val')
+  File "../utils/load_data.py", line 8, in load_aokvqa
+    os.path.join(aokvqa_dir, f"aokvqa_{version}_{split}.json")
+FileNotFoundError: [Errno 2] No such file or directory: 'AOKVQA/aokvqa/aokvqa_v1p0_val.json'
+    main()
+  File "train/clipcap_train.py", line 96, in main
+    run(dataset, val_dataset, model, cfg, tb_writer=None,model_ddp=model_without_ddp)
+  File "train/clipcap_train.py", line 164, in run
+    train=False, tb_writer=tb_writer)
+  File "train/clipcap_train.py", line 229, in loop
+    answer_list = load_aokvqa('AOKVQA/aokvqa', 'val')
+  File "../utils/load_data.py", line 8, in load_aokvqa
+    os.path.join(aokvqa_dir, f"aokvqa_{version}_{split}.json")
+FileNotFoundError: [Errno 2] No such file or directory: 'AOKVQA/aokvqa/aokvqa_v1p0_val.json'
+save success
+>>> epoch 1: val set (eval)
+begin eval
+Traceback (most recent call last):
+  File "train/clipcap_train.py", line 541, in <module>
+    main()
+  File "train/clipcap_train.py", line 96, in main
+    run(dataset, val_dataset, model, cfg, tb_writer=None,model_ddp=model_without_ddp)
+  File "train/clipcap_train.py", line 164, in run
+    train=False, tb_writer=tb_writer)
+  File "train/clipcap_train.py", line 229, in loop
+    answer_list = load_aokvqa('AOKVQA/aokvqa', 'val')
+  File "../utils/load_data.py", line 8, in load_aokvqa
+    os.path.join(aokvqa_dir, f"aokvqa_{version}_{split}.json")
+FileNotFoundError: [Errno 2] No such file or directory: 'AOKVQA/aokvqa/aokvqa_v1p0_val.json'
+Killing subprocess 24973
+Killing subprocess 24974
+Killing subprocess 24975
+Killing subprocess 24976
+Killing subprocess 24977
+Killing subprocess 24978
+Killing subprocess 24979
+Killing subprocess 24980
+Traceback (most recent call last):
+  File "/home/suowei/anaconda3/envs/py3.7-torch1.8/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/suowei/anaconda3/envs/py3.7-torch1.8/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/suowei/anaconda3/envs/py3.7-torch1.8/lib/python3.7/site-packages/torch/distributed/launch.py", line 340, in <module>
+    main()
+  File "/home/suowei/anaconda3/envs/py3.7-torch1.8/lib/python3.7/site-packages/torch/distributed/launch.py", line 326, in main
+    sigkill_handler(signal.SIGTERM, None)  # not coming back
+  File "/home/suowei/anaconda3/envs/py3.7-torch1.8/lib/python3.7/site-packages/torch/distributed/launch.py", line 301, in sigkill_handler
+    raise subprocess.CalledProcessError(returncode=last_return_code, cmd=cmd)
+subprocess.CalledProcessError: Command '['/home/suowei/anaconda3/envs/py3.7-torch1.8/bin/python', '-u', 'train/clipcap_train.py', '--log-dir', 'logs', '--aokvqa-dir', 'aokvqa', '--train-features', '../features/clip-ViT-B-32_train.pt', '--val-features', '../features/clip-ViT-B-32_val.pt', '--pretrained-model', '../pretrain_model/coco_weights.pt', '--generation-target', 'rationale', '--mapping', 'mlp', '--finetune-gpt']' returned non-zero exit status 1.

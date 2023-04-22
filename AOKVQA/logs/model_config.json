@@ -1,0 +1,1 @@
+{"mapping_type": "mlp", "prefix_length": 10, "clip_model_type": "ViT-B/32", "normalize_prefix": false, "num_layers": 8, "prompt_with_choices": false, "generation_target": "rationale"}
